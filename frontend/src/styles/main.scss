@@ -1,0 +1,155 @@
+@import 'variables';
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    height: calc(100vh - 200px);  
+    gap: 10px;
+    font-family: inherit;
+    padding: 100px 0;  
+    justify-content: flex-start;
+  
+    .pseudo_nav {
+      position: fixed;
+      padding: 30px 0px 0px 30px;
+      width: calc(100% - 30px);
+      background-color: #fff;
+      top: 0;
+      font-size: 24px;
+      font-weight: bold;
+      color: $primary;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      gap: 20px;
+  
+      border-radius: 8px;
+      border: 1px solid #E6E7EC;
+      width: min-content;
+  
+      .heading {
+        display: inherit;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+  
+      .login {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+  
+        .input_fields {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          width: 420px;
+  
+          label {
+            font-size: 14px;
+          }
+  
+          input {
+            padding: 14px 10px;
+            border-radius: 8px;
+            border: 1px solid #D0D5DD;
+          }
+  
+          span {
+            font-size: 16px;
+            color: #AF202D;
+            display: none;
+          }
+  
+          input:not(:placeholder-shown):invalid ~ span {
+            display: inline-block;
+          }
+  
+          input:focus {
+            border: 1px solid $primary;
+            outline: none;
+          }
+  
+          input:not(:placeholder-shown):valid {
+            border: 1px solid $primary;
+            outline: none;
+          }
+  
+          input:not(:placeholder-shown):invalid {
+            border: 1px solid #AF202D;
+          }
+  
+          a {
+            color: $primary;
+            font-size: 16px;
+          }
+        }
+      }
+  
+      .auth {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+  
+        span {
+          font-size: 16px;
+          font-weight: bold;
+          color: $gray;
+        }
+  
+        div {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 22px;
+  
+          a {
+            padding: 6px 15px;
+            border-radius: 8px;
+            border: 1px solid #D0D5DD;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  
+    p a {
+      color: $primary;
+    }
+  }
+
+
+  @media (max-width: 500px) {
+
+    main{
+      justify-content: center;
+      height: calc(100%);
+
+      .pseudo_nav {
+        background-color: #fff;
+      }
+    
+      form {
+        border: none;
+        width: calc(100% - 60px);
+
+          .login .input_fields {
+            width: 100%;
+
+            input {
+              width: calc(100% - 20px);
+            }
+          }
+      }
+    }
+    
+  }

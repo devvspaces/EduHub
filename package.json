@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "notiflix": "^3.2.6"
+  }
+}
