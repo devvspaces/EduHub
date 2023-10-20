@@ -5,7 +5,7 @@ import { Button } from '../components';
 import Notiflix from 'notiflix'
 import { useEffect } from 'react';
 
-export default function SignUp () {
+export default function SignIn () {
     const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     function resetInput () {
