@@ -63,15 +63,15 @@ export default function SignUp () {
     return (
         <>
             <Helmet>
-                <title>EduHub | Sign Up</title>
+                <title>EduHub | Login</title>
             </Helmet>
 
             <main>
                 <Link href='/' className="pseudo_nav">EduHub</Link>
                 <form> 
                     <div className="heading">
-                        <header>Welcome to EduHub</header>
-                        <p>Sign up to create your account</p>
+                        <header>Welcome Back!</header>
+                        <p>Sign in to access your account</p>
                     </div>
 
                     <div className="login">
@@ -85,6 +85,7 @@ export default function SignUp () {
                         <fieldset className="input_fields">
                         <label htmlFor='password'>Password</label>
                         <input onChange={resetInput} id='password' type='password' placeholder='' required />
+                        <Link href='#'>Forgot Password?</Link>
                         </fieldset>
 
                         <Button onClick={formStub}>Sign Up</Button>
@@ -102,7 +103,7 @@ export default function SignUp () {
 
                 </form>
 
-                <p>Already have an account? <Link to='/login'>Sign In</Link></p>                
+                <p>Don’t have an account? <Link to='/'>Sign Up</Link></p>                
             </main>
         
         </>
