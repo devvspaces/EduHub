@@ -1,0 +1,94 @@
+@import 'src/styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #fff;
+  transition: 1s;
+  font-family: 'Manrope';
+}
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  color: $primary;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 64px;
+  font-style: normal;
+  line-height: normal;
+
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 48px;
+  font-style: normal;
+  line-height: normal;
+}
+
+h3 {
+  font-size: 48px;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bolder;
+}
+
+header {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+p {
+  font-style: normal;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+@media (max-width: 1300px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+  
+  p {
+  font-size: 16px;
+ }
+}
+
+@media (max-width: 1100px) {
+  header{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,16 @@
+@import 'variables';
+
+.Button {
+    border-radius: 8px;
+    background-color: $primary;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.Button:hover {
+    box-shadow: 3px 3px 10px rgb(50, 213, 131, 0.4);
+}
