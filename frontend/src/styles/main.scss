@@ -10,6 +10,8 @@ main {
     font-family: inherit;
     padding: 100px 0;  
     justify-content: flex-start;
+    background-image: url("../../public/Background.png");
+    background-size: 50%;
   
     .pseudo_nav {
       position: fixed;
@@ -31,6 +33,7 @@ main {
       border-radius: 8px;
       border: 1px solid #E6E7EC;
       width: min-content;
+      background-color: #fff;
   
       .heading {
         display: inherit;
