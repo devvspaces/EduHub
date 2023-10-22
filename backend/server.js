@@ -24,10 +24,18 @@ app.use(cors({
     credentials: true
 }));
 
+const express = require('express')
+const app = express()
+const port = 3000
+const connectToDatabase = require('./utils/db.js');
+const cors = require('cors');
 
-app.get("/", (req, res) => {
-    return res.json({data: "hello world"});
-})
+const db = connectToDatabase();
+
+//  Middlewares
+app.use(cors());
+app.use(express.json());
+
 
 app.use("/api/auth", require("./routes/users"));
 
