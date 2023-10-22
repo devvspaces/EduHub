@@ -1,10 +1,19 @@
 {
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "mongoose": "^7.6.3",
-    "uuidv4": "^6.2.13"
-  }
+	"name": "eduhub-backend",
+	"version": "1.0.0",
+	"description": "Backend for EduHub web and mobile application",
+	"main": "server.js",
+	"scripts": {
+		"test": "cross-env NODE_ENV=test jest --testTimeout=5000"
+	},
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.20.2",
+		"cors": "^2.8.5",
+		"dotenv": "^16.3.1",
+		"express": "^4.18.2",
+		"jsonwebtoken": "^9.0.2",
+		"mongoose": "^7.6.3",
+		"uuidv4": "^6.2.13"
+	}
 }

@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema(
         user_id: {
             type: String,
             required: true,
-            default: uuidv4().split("-").join("")
+            default: uuidv4.uuid().split("-").join(""),
         },
         email: {
             type: String,
