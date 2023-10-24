@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uuidv4 = require('uuidv4');
+const { v4: uuidv4 } = require('uuid');
 
 const userSchema = new mongoose.Schema(
     {
