@@ -1,5 +1,6 @@
 const User = require('../models/user.model');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const createUser = async (req, res) => {
     try {
@@ -32,7 +33,11 @@ const loginUser = async (req, res) => {
         const compare = await bcrypt.compare(IncomingPassword, password);
         if (!compare)
             throw new ResourceNotFound({ message: 'Invalid Email/Password' });
-        return res.status(200).json({ data: user });
+        const payload = {
+            id: user.user_id,
+        };
+        const accessToken = jwt.sign(payload, process.env.JWT_SEC);
+        return res.status(200).json({ user, accessToken });
     } catch (err) {
         res.status(500).json(err?.message || 'An Error Occured!');
     }
