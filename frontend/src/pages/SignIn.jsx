@@ -39,7 +39,12 @@ export default function SignIn () {
       if (email.match(validRegex) && password) {
         Notiflix.Notify.success("Login successful")
         localStorage.setItem('user', JSON.stringify("login valid"));
-        window.location.assign("/dashboard")
+        Notiflix.Loading.standard("Dashboard Loading")
+
+        setTimeout(() => {
+            window.location.assign("/dashboard")
+        }, 3000);
+
     
         // let success = await fetch(SIGN_IN_API, response)
     } else if (!email && password) {
@@ -77,15 +82,15 @@ export default function SignIn () {
                     <div className="login">
                         <fieldset className="input_fields">
                         <label htmlFor='email'>Email</label>
-                        <input onChange={resetInput} id='email' type='email' placeholder='' required/>
+                        <input onChange={resetInput} id='email' type='email' placeholder='Email Address' required/>
                         <span id="error_msg">Please enter a valid email</span>
 
                         </fieldset>
 
                         <fieldset className="input_fields">
                         <label htmlFor='password'>Password</label>
-                        <input onChange={resetInput} id='password' type='password' placeholder='' required />
-                        <Link href='#'>Forgot Password?</Link>
+                        <input onChange={resetInput} id='password' type='password' placeholder='********' required />
+                        <Link to="/forgot-password">Forgot Password?</Link>
                         </fieldset>
 
                         <Button onClick={formStub}>Sign Up</Button>

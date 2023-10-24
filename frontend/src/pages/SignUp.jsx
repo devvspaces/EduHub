@@ -37,9 +37,14 @@ export default function SignUp () {
       let inputs = document.getElementsByTagName("input")
 
       if (email.match(validRegex) && password) {
-        Notiflix.Notify.success("Login successful")
+        Notiflix.Notify.success("Sign up successful")
         localStorage.setItem('user', JSON.stringify("login valid"));
-        window.location.assign("/dashboard")
+
+        Notiflix.Loading.standard("Welcome to Eduhub")
+
+        setTimeout(() => {
+            window.location.assign("/dashboard")
+        }, 3000);
     
         // let success = await fetch(SIGN_IN_API, response)
     } else if (!email && password) {
@@ -77,14 +82,14 @@ export default function SignUp () {
                     <div className="login">
                         <fieldset className="input_fields">
                         <label htmlFor='email'>Email</label>
-                        <input onChange={resetInput} id='email' type='email' placeholder='' required/>
+                        <input onChange={resetInput} id='email' type='email' placeholder='Email Address' required/>
                         <span id="error_msg">Please enter a valid email</span>
 
                         </fieldset>
 
                         <fieldset className="input_fields">
                         <label htmlFor='password'>Password</label>
-                        <input onChange={resetInput} id='password' type='password' placeholder='' required />
+                        <input onChange={resetInput} id='password' type='password' placeholder='********' required />
                         </fieldset>
 
                         <Button onClick={formStub}>Sign Up</Button>
