@@ -5,6 +5,7 @@ const app = express()
 const port = 3000
 const connectToDatabase = require('./utils/db.js');
 const cors = require('cors');
+const apiRouter = require("./routes/routes.js");
 
 const db = connectToDatabase();
 
@@ -12,6 +13,7 @@ const db = connectToDatabase();
 app.use(cors());
 app.use(express.json());
 
+app.use('/api', apiRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
