@@ -35,8 +35,8 @@ const loginUser = async (req, res) => {
         const payload = {
             id: user.user_id,
         };
-        const accessToken = jwt.sign(payload, process.env.JWT_SEC);
-        return res.status(200).json({ user, accessToken });
+        const token = jwt.sign(payload, process.env.JWT_SEC);
+        return res.status(200).json({ user, token });
     } catch (err) {
         res.status(500).json(err?.message || 'An Error Occured!');
     }
