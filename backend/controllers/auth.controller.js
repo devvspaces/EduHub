@@ -18,14 +18,24 @@ const createUser = async (req, res) => {
         await user.save();
         res.status(200).json({ status: 201, data: user })
     } catch (err) {
-        res.status(500).json(err?.message)
+        res.status(500).json(err?.message || 'An Error Occured!')
     }
 }
 
 const loginUser = async (req, res) => {
     try {
-        const { } = req.body;
+        let user;
+        const { email: IncomingEmail, password: IncomingPassword } = req.body;
+        user = await User.findOne({ email: IncomingEmail });
+        if (!user) throw new ResourceNotFound('Invalid Email/Password ');
+        const { password } = user;
+        const compare = await bcrypt.compare(IncomingPassword, password);
+        if (!compare)
+            throw new ResourceNotFound({ message: 'Invalid Email/Password' });
+        return res.status(200).json({ data: user });
     } catch (err) {
-        res.status(500).json(err?.message)
+        res.status(500).json(err?.message || 'An Error Occured!');
     }
 }
+
+module.exports = { createUser, loginUser }
