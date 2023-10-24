@@ -1,5 +1,3 @@
-const none_null = require('./None_Null_Checker_DP');
-
 module.exports = (pagination_index, max_results) => {
     const p_index = parseInt(pagination_index, 10) ?? 0;
     const max_result = parseInt(max_results, 10) ?? 50;
