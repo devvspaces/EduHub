@@ -27,12 +27,11 @@ const updateUser = async (req, res) => {
 
 const forgotPassword = async (req, res) => {
     try {
-        const { email } = req.body;
+        const { email, password } = req.body;
         const user = await User.findOne({ email });
 
         if (!user) res.status(404).json({ message: 'Email does not exist' });
 
-        const password = userIdGenerator();
         user.password = password;
         await user.save();
         res.status(200).json({ message: 'Password reset successful!' })
