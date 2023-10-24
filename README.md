@@ -29,7 +29,7 @@ FRONTEND_URL="<url-of-the-frontend-which-requires-cors-access-once-deployed>"
 
 ### Frontend
 
-To run the Backend locally, follow these steps:
+To run the Frontend locally, follow these steps:
 
 1. Clone the repository:
 

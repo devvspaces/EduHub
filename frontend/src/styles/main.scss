@@ -1,5 +1,7 @@
 @import 'variables';
 
+
+
 main {
     display: flex;
     flex-direction: column;
@@ -12,6 +14,13 @@ main {
     justify-content: flex-start;
     background-image: url("../../public/Background.png");
     background-size: 50%;
+
+    .goback {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
   
     .pseudo_nav {
       position: fixed;
@@ -147,6 +156,10 @@ main {
       gap: 12px;
     }
   }
+
+.forgot_password {
+  justify-content: center;
+}
 
   @media (max-width: 500px) {
 
