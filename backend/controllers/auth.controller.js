@@ -28,10 +28,10 @@ const loginUser = async (req, res) => {
         let user;
         const { email: IncomingEmail, password: IncomingPassword } = req.body;
         user = await User.findOne({ email: IncomingEmail });
-        if (!user) res.status(401).json({ message: 'Invalid Email/Password' });
+        if (!user) return res.status(401).json({ message: 'Invalid Email/Password' });
         const { password } = user;
         const compare = await bcrypt.compare(IncomingPassword, password);
-        if (!compare) res.status(401).json({ message: 'Invalid Email/Password' });
+        if (!compare) return res.status(401).json({ message: 'Invalid Email/Password' });
         const payload = {
             id: user.user_id,
         };
