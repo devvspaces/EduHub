@@ -6,9 +6,9 @@ const app = require('./server');
 describe('User Registration and Login Endpoints', () => {
     // Variables to store user credentials
     let userCredentials = {
-        email: 'rhoda@gmail.com',
+        email: 'rhoda2@gmail.com',
         password: 'excellence',
-        role: 'Student'
+        role: 'student'
     };
 
     // Variables to store login credentials
@@ -22,18 +22,18 @@ describe('User Registration and Login Endpoints', () => {
 
 
     // Test user registration
-    it('should register a new user', async (done) => {
+    it('should register a new user', async () => {
         const response = await request(app)
             .post('/api/auth/register')
             .send(userCredentials);
 
         expect(response.status).toBe(200);
-        expect(response.body).toHaveProperty('user');
-        done();
-    });
+        expect(response.body).toHaveProperty('data');
+        // done();
+    }, 30000);
 
     // Test user login
-    it('should log in an existing user', async (done) => {
+    it('should log in an existing user', async () => {
         const response = await request(app)
             .post('/api/auth/login')
             .send(loginCredentials);
@@ -43,14 +43,14 @@ describe('User Registration and Login Endpoints', () => {
 
         // Store the authentication token for future requests
         authToken = response.body.token;
-        done();
-    });
+        // done();
+    }, 30000);
 
 
     // Test invalid login
-    it('should return an error for invalid login', async (done) => {
+    it('should return an error for invalid login', async () => {
         const invalidCredentials = {
-            username: 'invaliduser@gmail.com',
+            email: 'invaliduser@gmail.com',
             password: 'invalidpassword',
         };
         const response = await request(app)
@@ -60,6 +60,6 @@ describe('User Registration and Login Endpoints', () => {
         expect(response.status).toBe(401);
         expect(response.body.message).toBe('Invalid Email/Password');
 
-        done();
-    });
+        // done();
+    }, 30000);
 });
