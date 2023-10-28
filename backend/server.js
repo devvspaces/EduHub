@@ -22,6 +22,7 @@ app.use(cors({
 
 
 app.use("/api/auth", require("./routes/user"));
+app.use("/api/course", require("./routes/course"));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
