@@ -16,9 +16,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', apiRouter)
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+
+
+app.use("/api/auth", require("./routes/user"));
+app.use("/api/course", require("./routes/course"));
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
