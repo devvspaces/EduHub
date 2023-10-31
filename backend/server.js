@@ -21,6 +21,7 @@ app.use('/api', apiRouter)
 app.use("/api/auth", require("./routes/user"));
 app.use("/api/course", require("./routes/course"));
 app.use("/api/user_assessments",require("./routes/userAssessment.routes"));
+app.use("/api/user_course" ,require("routes/userCourse.routes"));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
